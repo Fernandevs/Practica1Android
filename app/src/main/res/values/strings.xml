@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Firs Practice</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title">Nostra Pizza</string>
+    <string name="pepperoni">Clásica Peperoni</string>
+    <string name="pepperoni_pizza">Pizza de pepperoni</string>
+    <string name="pepperoni_description">Rica pizza en masa tradicional con una base de salsa de jitomate italiana, queso mozzarella y pepperoni</string>
+    <string name="pepperoni_order">Haz ordenado una pizza de pepperoni</string>
+    <string name="mexican">Pizza mexicana</string>
+    <string name="mexican_pizza">Pizza mexicana</string>
+    <string name="mexican_description">Rica pizza en masa tradicional con una base de salsa de jitomate italiana, queso mozzarella y chorizo</string>
+    <string name="mexican_order">Haz ordenado una pizza mexicana</string>
+    <string name="cheese">Pizza 4 quesos</string>
+    <string name="cheese_pizza">Pizza tres quesos</string>
+    <string name="cheese_description">Rica pizza en masa tradicional con una base de salsa de jitomate italiana, queso mozzarella, oaxaca, chédar y parmesano</string>
+    <string name="cheese_order">Haz ordenado una pizza de 4 quesos</string>
+    <string name="sopping_cart">Carrito de compras</string>
+</resources>

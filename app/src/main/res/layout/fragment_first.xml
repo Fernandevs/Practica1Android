@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <TextView
+        android:id="@+id/textview_first"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/pepperoniImageView"
+        style="@style/Body"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/pepperoni_pizza"
+        android:src="@drawable/pepperoni"
+        android:onClick="showOrder"
+        app:layout_constraintBottom_toTopOf="@+id/mexicanImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+
+    <ImageView
+        android:id="@+id/mexicanImageView"
+        style="@style/Body"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/mexican_pizza"
+        android:src="@drawable/mexicana"
+        app:layout_constraintBottom_toTopOf="@+id/cheeseImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pepperoniImageView"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/cheeseImageView"
+        style="@style/Body"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/cheese_pizza"
+        android:src="@drawable/tres_quesos"
+        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mexicanImageView" />
+
+    <TextView
+        android:id="@+id/pepperoniTextView"
+        style="@style/Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/pepperoni"
+        app:layout_constraintBottom_toTopOf="@+id/pepperoniDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pepperoniImageView"
+        app:layout_constraintTop_toTopOf="@+id/pepperoniImageView" />
+
+    <TextView
+        android:id="@+id/mexicanTextView"
+        style="@style/Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/mexican"
+        app:layout_constraintBottom_toTopOf="@+id/mexicanDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mexicanImageView"
+        app:layout_constraintTop_toTopOf="@+id/mexicanImageView" />
+
+    <TextView
+        android:id="@+id/cheeseTextView"
+        style="@style/Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/cheese"
+        app:layout_constraintBottom_toTopOf="@+id/cheeseDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cheeseImageView"
+        app:layout_constraintTop_toTopOf="@+id/cheeseImageView" />
+
+    <TextView
+        android:id="@+id/pepperoniDescriptionTextView"
+        style="@style/Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/pepperoni_description"
+        app:layout_constraintBottom_toBottomOf="@+id/pepperoniImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pepperoniImageView"
+        app:layout_constraintTop_toBottomOf="@+id/pepperoniTextView" />
+
+    <TextView
+        android:id="@+id/mexicanDescriptionTextView"
+        style="@style/Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/mexican_description"
+        app:layout_constraintBottom_toBottomOf="@+id/mexicanImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mexicanImageView"
+        app:layout_constraintTop_toBottomOf="@+id/mexicanTextView" />
+
+    <TextView
+        android:id="@+id/cheeseDescriptionTextView"
+        style="@style/Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/cheese_description"
+        app:layout_constraintBottom_toBottomOf="@+id/cheeseImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cheeseImageView"
+        app:layout_constraintTop_toBottomOf="@+id/cheeseTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
