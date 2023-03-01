@@ -41,7 +41,6 @@
         android:layout_marginTop="16dp"
         android:contentDescription="@string/pepperoni_pizza"
         android:src="@drawable/pepperoni"
-        android:onClick="showOrder"
         app:layout_constraintBottom_toTopOf="@+id/mexicanImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_first" />

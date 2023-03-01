@@ -56,12 +56,4 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
-
-    private fun displayToast(message: String){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    fun showOrder(view: View) {
-        displayToast(getString(R.string.pepperoni_order))
-    }
 }
