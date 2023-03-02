@@ -40,19 +40,19 @@ class FirstFragment : Fragment() {
         }
 
         binding.pepperoniImageView.setOnClickListener {
-            _orderViewModel.list.add(getString(R.string.pepperoni_order))
+            _orderViewModel.addOrder(getString(R.string.pepperoni_order))
 
             showOrders()
         }
 
         binding.mexicanImageView.setOnClickListener {
-            _orderViewModel.list.add(getString(R.string.mexican_order))
+            _orderViewModel.addOrder(getString(R.string.mexican_order))
 
             showOrders()
         }
 
         binding.cheeseImageView.setOnClickListener {
-            _orderViewModel.list.add(getString(R.string.cheese_order))
+            _orderViewModel.addOrder(getString(R.string.cheese_order))
 
             showOrders()
         }
@@ -60,11 +60,12 @@ class FirstFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+
         _binding = null
     }
 
     private fun showOrders() {
-        for (order in _orderViewModel.list)
+        for (order in _orderViewModel.orders)
             Toast.makeText(binding.root.context, order, Toast.LENGTH_SHORT).show()
     }
 }
