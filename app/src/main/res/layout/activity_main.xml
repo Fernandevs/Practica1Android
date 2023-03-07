@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -31,5 +31,15 @@
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/sopping_cart"
         app:srcCompat="@drawable/ic_shopping_cart" />
+
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="64dp"
+        style="@style/Title"
+        android:text="@string/_0" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

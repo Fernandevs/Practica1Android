@@ -23,4 +23,5 @@
     <string name="cheese_description">Rica pizza en masa tradicional con una base de salsa de jitomate italiana, queso mozzarella, oaxaca, chédar y parmesano</string>
     <string name="cheese_order">Haz ordenado una pizza de 4 quesos</string>
     <string name="sopping_cart">Carrito de compras</string>
+    <string name="_0">0</string>
 </resources>
