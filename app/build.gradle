@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    // id 'kotlin-kapt'
 }
 
 android {
@@ -33,9 +34,22 @@ android {
     buildFeatures {
         viewBinding true
     }
+//    buildscript {
+//        repositories {
+//            google()
+//            mavenCentral()
+//        }
+//        dependencies {
+//            def kotlin_gradle_version = "1.8.0"
+//            classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3")
+//            classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_gradle_version")
+//        }
+//    }
 }
 
 dependencies {
+    def room_version = "2.5.0"
+
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -48,4 +62,8 @@ dependencies {
 
     // ViewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }

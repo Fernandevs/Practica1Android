@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.practica1android.adapters.OrderAdapter
-import com.example.practica1android.R
 
+import com.example.practica1android.R
+import com.example.practica1android.adapters.OrderAdapter
 import com.example.practica1android.databinding.FragmentSecondBinding
 import com.example.practica1android.viewmodels.OrderViewModel
 
@@ -21,11 +20,9 @@ import com.example.practica1android.viewmodels.OrderViewModel
  */
 class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
-    private val _orderViewModel: OrderViewModel by activityViewModels()
-    private lateinit var list: RecyclerView
-
     private val binding get() = _binding!!
-    private val orderViewModel get() = _orderViewModel
+    private val orderViewModel: OrderViewModel by activityViewModels()
+    private lateinit var list: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +35,9 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = OrderAdapter(orderViewModel.getOrders())
+        val adapter = orderViewModel.orders?.let {
+            OrderAdapter(it)
+        }
 
         list = binding.recyclerView
         list.layoutManager = LinearLayoutManager(binding.root.context)

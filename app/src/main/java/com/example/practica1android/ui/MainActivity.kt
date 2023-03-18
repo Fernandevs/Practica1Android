@@ -10,33 +10,43 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.practica1android.R
+import androidx.room.Room
 
+import com.example.practica1android.R
 import com.example.practica1android.databinding.ActivityMainBinding
+import com.example.practica1android.data.PizzaDatabase
 import com.example.practica1android.viewmodels.OrderViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private val orderViewModel: OrderViewModel by lazy {
-        ViewModelProvider(this)[OrderViewModel::class.java]
+
+    private lateinit var orderViewModel: OrderViewModel
+
+    private val _database by lazy {
+        Room.databaseBuilder(
+            applicationContext,
+            PizzaDatabase::class.java,
+            "pizzas"
+        ).build()
     }
+
+    val database get() = _database
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
+        setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
+
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        orderViewModel.orders.observe(this) {list ->
-            binding.numberTextView.text = list.size.toString()
-        }
+        orderViewModel = ViewModelProvider(this)[OrderViewModel::class.java]
 
         binding.fab.setOnClickListener {
             navController.navigate(R.id.action_FirstFragment_to_SecondFragment)
@@ -63,5 +73,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        orderViewModel.command = null
     }
 }
